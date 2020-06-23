@@ -92,16 +92,30 @@ body {
   padding: 3rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, 220px);
-  grid-template-rows: repeat(auto-fit, min-content);
+  grid-template-rows: repeat(auto-fit, 330px);
   grid-gap: 3rem;
 }
 
-#content div:hover {
-  opacity: .6;
+.content__box {
+  height: 330px;
 }
 
-.content__box {
-  height: 300px;
-  border-radius: 5px;
-  background-color: rgb(219, 219, 219);
+.content__cover {
+  padding: 2rem;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.content__cover p {
+  display: none ;
+  transform: translateY(-60%);
+  margin: 1.5rem 0;
+}
+
+.content__cover:hover {
+  background-image: none !important;
+}
+
+.content__cover:hover p {
+  display: flex;
+  width: 100%;
 }
