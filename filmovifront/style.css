@@ -1,0 +1,304 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: monospace;
+  background-color: rgb(32, 32, 32);
+  color: rgb(48, 48, 48);
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.aside {
+  background-color: rgb(39, 39, 39);
+}
+
+
+.aside__filmovi {
+  width: 90%;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 1rem;
+  background-color: rgb(104, 104, 104);
+}
+
+.aside h3 {
+  padding: .5rem;
+}
+
+.aside__item {
+  list-style: none;
+}
+
+.aside__btn {
+  text-align: start;
+  width: 100%;
+  height: 28px;
+  border: 0;
+  padding: .3rem;
+  background-color: #fff;
+  color: rgb(68, 68, 68);
+  font-family: inherit;
+  font-size: .7rem;
+  display: flex;
+  align-items: center;
+}
+
+
+.aside__btn:hover {
+  cursor: pointer;
+  background-color: rgb(243, 243, 243);
+}
+
+.aside__btn:focus {
+  outline: 0;
+}
+
+.aside__rating-sort {
+  display: flex;
+}
+
+.aside__rating-high {
+    border-radius: 0 0 0 5px;
+}
+
+
+.aside__rating-low {
+    border-radius: 0 0 5px 0;
+
+}
+
+.aside__glumci {
+  width: 90%;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 1rem;
+  background-color: rgb(104, 104, 104);
+}
+
+
+#content {
+  width: 100%;
+  background-color: rgb(26, 26, 26);
+  color: aquamarine;
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 220px);
+  grid-template-rows: repeat(auto-fit, 330px);
+  grid-gap: 3rem;
+}
+
+.content__box {
+  height: 330px;
+}
+
+.content__cover {
+  padding: 2rem;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  flex-direction: column;
+}
+
+.content__cover p {
+  display: none ;
+  transform: translateY(-60%);
+  margin: 1.5rem 0;
+}
+
+.content__cover button {
+  display: none ;
+  transform: translateY(190%);
+  margin: 1.5rem 0;
+  width: 40%;
+  padding: .4rem 1rem;
+  background-color: aquamarine;
+  color: #fff;
+  border: 1px solid #000;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.content__cover button:focus {
+  outline: 0;
+}
+
+.content__cover:hover {
+  background-image: none !important;
+}
+
+.content__cover:hover p {
+  display: block;
+  width: 100%;
+}
+
+.content__cover:hover button {
+  display: block;
+}
+
+/* ADD CARD!!! */
+/* ADD CARD!!! */
+/* ADD CARD!!! */
+
+.aside__add {
+  width: 90%;
+  margin: auto;
+  margin-top: 1rem;
+  padding: .5rem;
+  border-radius: 10px;
+  background-color: rgba(243, 243, 243, 0.233);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.add-btn {
+  height: 5rem;
+  width: 5rem;
+  font-size: 2rem;
+  color: #fefefe;
+  border-radius: 10px;
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
+  transition: .1s;
+}
+
+.add-btn:hover {
+  background-color: rgba(233, 233, 233, 0.199);
+}
+
+.add-btn:focus {
+  outline: 0;
+}
+
+.add-btn .fa-plus {
+  
+}
+
+/* MODAL */
+/* MODAL */
+/* MODAL */
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: -1rem;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+input {
+  margin-bottom: .3rem;
+}
+
+input:focus {
+  outline: 0;
+}
+
+.submit-button {
+  padding: .6rem;
+  background-color: rgb(71, 71, 71);
+  border: 0;
+  color: #fff;
+  font-size: .9rem;
+  border-radius: 10px 10px;
+  cursor: pointer;
+  margin-top: .4rem;
+}
+
+.submit-button:focus {
+  outline: 0;
+}
+
+.small-count {
+  display: inline-block;
+  margin-left: auto;
+  background-color: rgb(223, 223, 223);
+  padding: .3rem;
+  border-radius: 2px;
+}
+
+.aside__glumac {
+  background-color: rgb(230, 230, 230);
+  display: none;
+}
+
+.aside__glumac li {
+  padding: .3rem;
+  cursor: pointer;
+}
+
+.aside__glumac:last-child {
+  border-bottom-left-radius:  5px;
+  border-bottom-right-radius:  5px;
+}
+
+.aside__glumac li:hover {
+  background-color: rgb(141, 141, 141);
+}
+
+.show {display:block;}
+
+
+.okvir {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0,0,0,0.4);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.uokvireno {
+  background-color: rgb(248, 248, 248);
+  padding: 2rem;
+  margin-top: 30rem;
+  margin-bottom: auto;
+}
