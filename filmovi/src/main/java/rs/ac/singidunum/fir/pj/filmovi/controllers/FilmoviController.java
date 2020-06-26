@@ -17,7 +17,7 @@ import rs.ac.singidunum.fir.pj.filmovi.entities.Film;
 import rs.ac.singidunum.fir.pj.filmovi.entities.Glumac;
 import rs.ac.singidunum.fir.pj.filmovi.repositories.FilmoviRepository;
 
-@CrossOrigin
+@CrossOrigin(origins= "https://filmoviproject.herokuapp.com/", maxAge=3600)
 @RestController
 public class FilmoviController {
 
