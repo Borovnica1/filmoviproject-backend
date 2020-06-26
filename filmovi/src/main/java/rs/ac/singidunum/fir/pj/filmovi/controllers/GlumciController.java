@@ -3,6 +3,7 @@ package rs.ac.singidunum.fir.pj.filmovi.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,7 @@ import rs.ac.singidunum.fir.pj.filmovi.entities.Film;
 import rs.ac.singidunum.fir.pj.filmovi.entities.Glumac;
 import rs.ac.singidunum.fir.pj.filmovi.repositories.GlumciRepository;
 
+@CrossOrigin
 @RestController
 public class GlumciController {
 
@@ -50,6 +52,11 @@ public class GlumciController {
 	@GetMapping("/filmovi/glumac")
 	public List<Glumac> findAllGlumciByFilm(@RequestBody Film film) {
 		return repository.findAllGlumciByFilmovi(film);
+	}
+	
+	@GetMapping("/glumci/count")
+	public long getNumberOfGlumci() {
+		return repository.count();
 	}
 	
 	

@@ -3,8 +3,10 @@ package rs.ac.singidunum.fir.pj.filmovi.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -15,6 +17,7 @@ import rs.ac.singidunum.fir.pj.filmovi.entities.Film;
 import rs.ac.singidunum.fir.pj.filmovi.entities.Glumac;
 import rs.ac.singidunum.fir.pj.filmovi.repositories.FilmoviRepository;
 
+@CrossOrigin
 @RestController
 public class FilmoviController {
 
@@ -32,7 +35,7 @@ public class FilmoviController {
 	}
 	
 	@PostMapping("/filmovi")
-	public Film addFilm(@RequestBody Film filmovi) {
+	public Film addFilm(@ModelAttribute Film filmovi) {
 		return repository.save(filmovi);
 	}
 	
@@ -52,7 +55,25 @@ public class FilmoviController {
 	}
 	
 	
+	@GetMapping("/filmovi/search/{genre}")
+	public List<Film> getFilmoviByGenre(@PathVariable String genre) {
+		return repository.findAllByGenre(genre);
+	}
 	
+	@GetMapping("/filmovi/sort/asc")
+	public List<Film> getAllFilmoviByAsc() {
+		return (List<Film>)repository.findByOrderByRatingAsc();
+	}
+	
+	@GetMapping("/filmovi/sort/desc")
+	public List<Film> getAllFilmoviByDesc() {
+		return (List<Film>)repository.findByOrderByRatingDesc();
+	}
+	
+	@GetMapping("/filmovi/count")
+	public long getNUmberOfFilmovi() {
+		return repository.count();
+	}
 	
 	
 }
