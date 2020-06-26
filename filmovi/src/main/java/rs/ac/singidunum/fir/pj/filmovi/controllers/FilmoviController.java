@@ -17,7 +17,7 @@ import rs.ac.singidunum.fir.pj.filmovi.entities.Film;
 import rs.ac.singidunum.fir.pj.filmovi.entities.Glumac;
 import rs.ac.singidunum.fir.pj.filmovi.repositories.FilmoviRepository;
 
-@CrossOrigin(origins= "https://happy-joliot-1eca56.netlify.app", maxAge=3600)
+@CrossOrigin(origins = "*")
 @RestController
 public class FilmoviController {
 
