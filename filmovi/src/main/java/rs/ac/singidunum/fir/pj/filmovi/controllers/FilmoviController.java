@@ -49,7 +49,8 @@ public class FilmoviController {
 		return repository.save(filmovi);
 	}
 	
-	@GetMapping("/glumci/film")
+	@CrossOrigin
+	@PostMapping("/glumci/film")
 	public List<Film> getAllFilmoviByGlumac(@RequestBody Glumac glumac) {
 		return repository.findAllFilmoviByGlumci(glumac);
 	}

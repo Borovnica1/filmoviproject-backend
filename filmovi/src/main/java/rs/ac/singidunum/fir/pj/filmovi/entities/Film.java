@@ -4,12 +4,14 @@ package rs.ac.singidunum.fir.pj.filmovi.entities;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -28,6 +30,22 @@ public class Film {
 	private float rating;
 	private int year;
 	
+	
+	
+	/*
+	 * @Lob
+	 * 
+	 * @Column(name="image", nullable=false, columnDefinition="mediumblob") private
+	 * byte[] image;
+	 * 
+	 * public byte[] getImage() { return image; }
+	 * 
+	 * public void setImage(byte[] image) { this.image = image; }
+	 */
+    
+    
+    
+	
 	@ManyToMany(cascade={CascadeType.ALL})
 	@JoinTable(name = "filmoviglumci", 
 	joinColumns =
@@ -36,7 +54,7 @@ public class Film {
 	@JoinColumn (name = "glumac_id", referencedColumnName = "glumac_id"))
 	private Set<Glumac> glumci;
 	
-	public Film(int film_id, String title, String genre, int length, float rating, int year) {
+	public Film(int film_id, String title, String genre, int length, float rating, int year, byte[] image) {
 		super();
 		this.film_id = film_id;
 		this.title = title;
@@ -44,6 +62,7 @@ public class Film {
 		this.length = length;
 		this.rating = rating;
 		this.year = year;
+//		this.image = image;
 	}
 	
 	public Film() {
